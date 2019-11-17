@@ -1,0 +1,18 @@
+//		Define a method named printString, which takes a single String as a parameter. 
+//		This method should print the contents of the String to the screen.
+//		Print the message "Contains XX characters" on a separate line, where XX is the number of characters (length) in the string
+
+public class QuestionOne {
+	
+	public static void main(String args[]) {
+		QuestionOne qs = new QuestionOne();
+		qs.printString("hello");
+	}
+	
+	public void printString(String s) {
+		System.out.println(s);
+		
+		System.out.println("Contains "+ s.length() + " characters");
+	}
+
+}
