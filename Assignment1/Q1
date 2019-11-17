@@ -1,0 +1,125 @@
+import java.util.ArrayList;
+
+public class QsFive {
+
+	public static void main(String[] args)
+    {
+		QsFive f = new QsFive();
+	
+        //System.out.print(f.drawA(5, 5));
+		 //+ " " + f.drawA(5, 5) + " " + f.drawV(5, 5) + " " + f.drawA(5, 5)
+		f.drawJ(5, 5);
+		System.out.println();
+		f.drawA(5, 5);
+		System.out.println();
+		f.drawV(5, 5);
+		System.out.println();
+		f.drawA(5, 5);
+    }
+	
+	
+	public void drawJ(int x, int y)
+	{
+		for(int row = 1; row<=5; row++) {
+			for(int column = 1; column<=5; column++) {
+				if(row>1)
+				{
+					if(column > 3)
+					{
+						drawSpace();
+					}
+					else if(row>1 && row<5){
+						
+						if(column<3) {
+							drawSpace();
+						}
+						else {
+							drawStar();
+						}
+					}
+					else
+					{
+						drawStar();
+					}
+				}
+				else {
+					drawStar();
+				}
+                
+			}
+			System.out.println();
+		}
+	}
+
+	public void drawA(int x, int y) {
+		
+		for(int row = 1; row<=5; row++) {
+			for(int column = 1; column<=5; column++) {
+				
+				if(row>3) { //last few spaces
+					if(column>1 && column<5) {
+						drawSpace();
+					}
+					else {
+						drawStar();
+					}
+				}
+				else if(row>1 && row<3) {//second row
+					if(column==3) {
+						drawSpace();
+					}else if(column==1||column==5) {
+						drawSpace();
+					}
+					else {
+						drawStar();
+					}
+				}
+				else if(row==1) {
+					if(column<3||column>3) {
+						drawSpace();
+					}else {
+						drawStar();
+					}
+				}
+				else {
+					drawStar();
+				}
+			
+		}System.out.println();
+	}
+}
+	
+	public void drawV(int x, int y) {
+		for(int row = 1; row<=5; row++) {
+			for(int column = 1; column<=5; column++) {
+				if(row<5) {
+					if(column >1 && column <5) {
+						drawSpace();
+					}
+					else {
+						drawStar();
+					}
+				}else if(row==5) {
+					if(column<3 || column>3) {
+						drawSpace();
+					}else {
+						drawStar();
+					}
+				}
+				else {
+					drawStar();
+				}
+			}System.out.println();
+		}
+	}
+	
+    private void drawStar() {
+        System.out.print("*");
+    }
+
+    private void drawSpace() {
+        System.out.print(" ");
+    }
+
+
+}
